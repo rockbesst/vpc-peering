@@ -18,7 +18,6 @@ data "aws_ami" "amazon_linux" {
 }
 
 resource "aws_vpc" "vpc" {
-	name = "VPC_main"
   	cidr_block = var.cidr_block
 }
 
