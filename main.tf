@@ -16,7 +16,7 @@ resource "aws_vpc" "vpc_fra" {
   cidr_block = "192.168.0.0/16"
 }
 resource "aws_subnet" "sub_fra" {
-    vpc_id     = aws_vpc.vpc_fra
+    vpc_id     = aws_vpc.vpc_fra.id
     cidr_block = "192.168.1.0/24"
 }
 
@@ -26,7 +26,7 @@ resource "aws_vpc" "vpc_ire" {
 }
 resource "aws_subnet" "sub_ire" {
     provider = aws.ire
-    vpc_id     = aws_vpc.vpc_ire
+    vpc_id     = aws_vpc.vpc_ire.id
     cidr_block = "10.2.1.0/24"
 }
 
