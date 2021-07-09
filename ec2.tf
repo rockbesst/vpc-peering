@@ -3,7 +3,7 @@ resource "aws_instance" "WebServer1" {
 	ami = data.aws_ami.amazon_linux.id
 	instance_type = var.instance_type
 	vpc_security_group_ids = [aws_security_group.asg_fra.id]
-    subnet_id = aws_subnet.sub_fra
+    subnet_id = aws_subnet.sub_fra.id
 	key_name = var.ssh_key
 	associate_public_ip_address = var.allow_public_ip
 	tags = merge(var.tags, {Name = "WebServer1"})
@@ -15,7 +15,7 @@ resource "aws_instance" "WebServer2" {
 	ami = data.aws_ami.amazon_linux.id
 	instance_type = var.instance_type
 	vpc_security_group_ids = [aws_security_group.asg_ire.id]
-    subnet_id = aws_subnet.sub_ire
+    subnet_id = aws_subnet.sub_ire.id
 	associate_public_ip_address = var.allow_public_ip
 	tags = merge(var.tags, {Name = "WebServer2"})
 }
