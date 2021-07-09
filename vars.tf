@@ -1,4 +1,5 @@
 variable "region" {
+  default = "eu-central-1"
 }
 
 variable "tags" {
@@ -18,6 +19,4 @@ variable "allow_public_ip" {
 
 variable "instance_type" {
   default = "t2.micro"
-}
-
-variable "cidr_block"{}
+} 
