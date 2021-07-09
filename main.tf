@@ -21,6 +21,7 @@ resource "aws_vpc" "vpc_fra" {
 resource "aws_subnet" "sub_fra" {
     vpc_id     = aws_vpc.vpc_fra.id
     cidr_block = "192.168.1.0/24"
+    map_public_ip_on_launch = true #Delete after tests
 }
 
 resource "aws_vpc" "vpc_ire" {
