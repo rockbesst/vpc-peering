@@ -1,5 +1,4 @@
 resource "aws_instance" "WebServer1" {
-	provider = aws.fra
 	ami = data.aws_ami.amazon_linux.id
 	instance_type = var.instance_type
 	vpc_security_group_ids = [aws_security_group.asg_fra.id]

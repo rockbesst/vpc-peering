@@ -1,6 +1,5 @@
 provider "aws" {
 	region = "eu-central-1"
-    alias = "fra"
 }
 provider "aws" {
 	region = "eu-west-1"
@@ -14,7 +13,6 @@ resource "aws_vpc_peering_connection" "peer" {
 }
 
 resource "aws_vpc" "vpc_fra" {
-  provider   = aws.fra
   cidr_block = "192.168.0.0/16"
 }
 
