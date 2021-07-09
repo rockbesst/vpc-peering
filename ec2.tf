@@ -11,7 +11,7 @@ resource "aws_instance" "WebServer2" {
 	provider = aws.ire
 	ami = data.aws_ami.amazon_linux.id
 	instance_type = var.instance_type
-	vpc_security_group_ids = [aws_security_group.asg_ir.id]
+	vpc_security_group_ids = [aws_security_group.asg_ire.id]
 	associate_public_ip_address = var.allow_public_ip
 	tags = merge(var.tags, {Name = "WebServer2"})
 }
