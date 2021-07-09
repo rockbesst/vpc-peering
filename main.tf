@@ -11,6 +11,10 @@ module "structure_ire"{
 }
 
 resource "aws_vpc_peering_connection" "peer" {
+  depends_on = [
+    module.structure_fra,
+    module.structure_ire
+  ]
   peer_vpc_id   = module.structure_ire.aws_vpc.vpc.id  #до якої запит
   vpc_id        = module.structure_fra.aws_vpc.vpc.id  #з якої запит
  # peer_region   = "us-east-1"
