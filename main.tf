@@ -54,6 +54,7 @@ resource "aws_security_group" "asg_fra" {
 }
 
 resource "aws_security_group" "asg_ire" {
+    provider = aws.ire
     depends_on = [aws_vpc.vpc_ire]
   name        = "asg_ire"
   description = "SG for Ireland region"
