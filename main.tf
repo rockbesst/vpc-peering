@@ -80,3 +80,28 @@ resource "aws_security_group" "asg_ire" {
     Name = "SG for Ireland region"
   }
 } 
+
+resource "aws_route_table" "route_fra" {
+  vpc_id = aws_vpc.vpc_fra.id
+
+  route {
+    cidr_block = "10.2.0.0/16"
+    vpc_peering_connection_id = aws_vpc_peering_connection.peer.id
+  }
+  tags = {
+    Name = "Route_Fra"
+  }
+}
+
+resource "aws_route_table" "route_ire" {
+    provider = aws.ire
+  vpc_id = aws_vpc.vpc_ire.id
+
+  route {
+    cidr_block = "192.168.0.0/16"
+    vpc_peering_connection_id = aws_vpc_peering_connection.peer.id
+  }
+  tags = {
+    Name = "Route_Ire"
+  }
+}
