@@ -22,6 +22,7 @@ resource "aws_vpc" "vpc_ire" {
 }
 
 resource "aws_security_group" "asg_fra" {
+    depends_on = [aws_vpc.vpc_fra]
   name        = "asg_fra"
   description = "SG for Frankfurt region"
   vpc_id      = aws_vpc.vpc_fra.id
@@ -44,6 +45,7 @@ resource "aws_security_group" "asg_fra" {
 }
 
 resource "aws_security_group" "asg_ire" {
+    depends_on = [aws_vpc.vpc_ire]
   name        = "asg_ire"
   description = "SG for Ireland region"
   vpc_id      = aws_vpc.vpc_ire.id
