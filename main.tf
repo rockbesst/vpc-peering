@@ -17,7 +17,9 @@ resource "aws_vpc" "vpc_fra" {
 }
 
 resource "aws_vpc" "vpc_ir" {
-  provider   = aws.ire
+  providers = {
+    	aws = aws.ire
+  		}
   cidr_block = "10.2.0.0/16"
 }
 

@@ -8,7 +8,9 @@ resource "aws_instance" "WebServer1" {
 }
 
 resource "aws_instance" "WebServer2" {
-	provider = aws.ire
+	providers = {
+    	aws = aws.ire
+  		}
 	ami = data.aws_ami.amazon_linux.id
 	instance_type = var.instance_type
 	vpc_security_group_ids = [aws_security_group.asg_ir.id]
