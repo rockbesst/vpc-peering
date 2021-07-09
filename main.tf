@@ -6,7 +6,6 @@ provider "aws" {
     alias = "ire"
 }
 resource "aws_vpc_peering_connection" "peer" {
-    provider = aws.ire
   peer_vpc_id   = aws_vpc.vpc_ire.id  #до якої запит
   vpc_id        = aws_vpc.vpc_fra.id  #з якої запит
  # peer_region   = "us-east-1"
