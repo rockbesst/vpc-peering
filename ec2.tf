@@ -5,7 +5,7 @@ resource "aws_instance" "WebServer1" {
 	vpc_security_group_ids = [aws_security_group.asg_fra.id]
     subnet_id = aws_subnet.sub_fra.id
 	key_name = var.ssh_key
-	associate_public_ip_address = var.allow_public_ip
+	associate_public_ip_address = true
 	tags = merge(var.tags, {Name = "WebServer1"})
 }
 
