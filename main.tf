@@ -13,8 +13,6 @@ resource "aws_vpc_peering_connection" "peer" {
   peer_vpc_id   = aws_vpc.vpc_ire.id  #до якої запит
   peer_region = "eu-west-1"
   vpc_id        = aws_vpc.vpc_fra.id  #з якої запит
- # peer_region   = "us-east-1"
- auto_accept = true
 }
 
 resource "aws_vpc" "vpc_fra" {
