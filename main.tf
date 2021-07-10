@@ -77,13 +77,13 @@ resource "aws_security_group" "asg_ire" {
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
-    cidr_blocks      = [aws_vpc.vpc_ire.cidr_block]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
   egress {
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
-    cidr_blocks      = [aws_vpc.vpc_ire.cidr_block]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
   tags = {
     Name = "SG for Ireland region"
