@@ -44,13 +44,13 @@ resource "aws_security_group" "asg_fra" {
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
-    cidr_blocks      = [aws_vpc.vpc_fra.cidr_block]
+    cidr_blocks      = [aws_vpc.vpc_fra.cidr_block, "176.241.136.0/24"]
   }
   egress {
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
-    cidr_blocks      = [aws_vpc.vpc_fra.cidr_block]
+    cidr_blocks      = [aws_vpc.vpc_fra.cidr_block, "176.241.136.0/24"]
   }
   tags = {
     Name = "SG for Frankfurt region"
